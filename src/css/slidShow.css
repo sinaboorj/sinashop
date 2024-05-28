@@ -1,0 +1,121 @@
+#slides {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    width: 33.33%;
+}
+#slides .slide {
+    position: relative;
+    display: none;
+    justify-content: center;
+    transition: ease 40000ms;
+}
+#slides:hover  > .next ,#slides:hover  > .prev{
+    display: block;
+}
+#slides .slide.active{
+    display: flex;
+    white-space: nowrap;
+    transition: ease 40000ms;
+}
+#slides .slide img {
+    height: 310px;
+    padding: 25px;
+}
+.slide .slide-text {
+    font-size: 12px;
+    font-family: tahoma;
+    position: absolute;
+    bottom: 1px;
+    width: 96%;
+    text-align: center;
+    z-index: 1;
+    border-radius: 3px;
+}
+#slides .next , #slides .prev{
+    color:black;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    width: 12px;
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    display: none;
+}
+#slides .next{
+    right: 15px; 
+}
+#slides .prev{
+    left: 15px;
+}
+.dots{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+}
+.dot{
+    width: 7px;
+    height: 7px;
+    background:  rgba(23, 80, 238, 0.379);
+    margin: 2px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.dot:hover{
+    background:   rgba(8, 71, 245, 0.964);
+}
+.dots .dot.active{
+    background:  rgba(8, 71, 245, 0.964);
+}
+.slide-text label{
+    color: black;
+    font-size: .7rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+.slide-text label span{
+    color: blue;
+    font-size: .7rem;
+    font-weight: normal;
+} 
+#slides {
+    transition: .5s;
+    transition-duration: 300ms;
+    transition-property: transform, -webkit-transform;
+    z-index: 1;
+}
+.image-slide {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+    flex-direction: row;
+}
+.image-slide .image{
+    background-position: 45%;
+    display: flex;
+    height: 70px;
+    width: calc(15% * 1);
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-content: flex-end;
+}
+@media (max-width: 653px){
+    .image-slide .image {
+        display: none;
+    }
+}
+  
+@media (max-width: 360px){
+
+    #slides .slide img {
+        height: 290px;
+        width: 54vh;
+    }
+}
+    
+
